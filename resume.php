@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="picture-resume-wrapper">
                     <div class="picture-resume">
-                        <span><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="" /></span>
+                        <span><img src="catimage.jpg" alt="" /></span>
                         <svg version="1.1" viewBox="0 0 350 350">
 
                             <defs>
@@ -42,7 +42,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="name-wrapper">
-                    <h1>Tymofii <br />Sahalovych</h1><!-- YOUR NAME AND LAST NAME  -->
+                    <h1>Tymofii <br />Sahalovych</h1>
                 </div>
                 <div class="clearfix"></div>
                 <div class="contact-info clearfix">
@@ -53,27 +53,24 @@
                         <li>Home</li>
                     </ul>
                     <ul class="list-content ">
-                        <li>+11111111111</li> <!-- YOUR PHONE NUMBER  -->
-                        <li>tempmail@gmail.com</li> <!-- YOUR EMAIL -->
-                        <li><a href="#">website.com</a></li> <!-- YOUR WEBSITE  -->
-                        <li>Address address</li> <!-- YOUR STATE AND COUNTRY  -->
+                        <li>+41 76 815 22 59</li>
+                        <li>tymofiisahalovych@gmail.com</li>
+                        <li><a href="https://github.com/TymofiiSahalovych">GitHub Profile</a></li>
+                        <li>Diechtersmattstrasse 9, 6074 Giswil</li>
                     </ul>
                 </div>
                 <div class="contact-presentation">
-                    <!-- YOUR PRESENTATION RESUME  -->
-                    <p><span class="bold">Lorem</span> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod congue nisi, nec consequat quam. In consectetur faucibus turpis eget laoreet. Sed nec imperdiet purus. </p>
+                    <p><span class="bold">Computer Science</span> graduate with a passion for software development and innovation.
+                     Currently working as a Trainee at Axetris AG, specializing in full-stack development with C#, ASP.NET, 
+                     and modern web technologies. Experienced in database optimization, Windows services development, 
+                     and machine learning applications. Dedicated to creating efficient solutions that enhance productivity.</p>
                 </div>
                 <div class="contact-social clearfix">
-                    <ul class="list-titles">
-                        <li>Twitter</li>
-                        <li>Dribbble</li>
-                        <li>Codepen</li>
-                    </ul>
                     <ul class="list-content">
-                        <!-- REMEMBER TO PUT THE URL ON THE HREF TAG  -->
-                        <li><a href="">@aoaoa</a></li> <!-- YOUR TWITTER USER  -->
-                        <li><a href="">aoaoa</a></li> <!-- YOUR DRIBBBLE USER  -->
-                        <li><a href="">aoaoa</a></li> <!-- YOUR BEHANCE USER  -->
+                        <p><strong>Languages:</strong></p>
+                        <li>English (C1 - Proficient)</li>
+                        <li>German (B1 - Intermediate)</li>
+                        <li>Ukrainian (Native)</li>
                     </ul>
                 </div>
             </div>
@@ -85,63 +82,74 @@
 
                 <div class="experience-wrapper">
                     <div class="company-wrapper clearfix">
-                        <div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-                        <div class="time">Nov 2012 - Present</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+                        <div class="experience-title">Axetris AG</div> <!-- NAME OF THE COMPANY  -->
+                        <div class="time">Sep. 2022 - Present</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
                     </div>
 
                     <div class="job-wrapper clearfix">
-                        <div class="experience-title">Front End Developer </div> <!-- JOB TITLE  -->
+                        <div class="experience-title">Trainee </div> <!-- JOB TITLE  -->
                         <div class="company-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p> <!-- JOB DESCRIPTION  -->
+                            <p> <!-- JOB DESCRIPTION  -->
+                                Axetris AG is a leading company in microtechnology applications, offering solutions in gas sensing, infrared 
+                                sources, and mass flow controllers.
+                                <ul>
+                                    <li>Contributed to the research and development team by modernizing database structures and enhancing 
+                                        accessibility using C# and SQL technologies.</li>
+                                    <li>Developed and implemented Windows services to facilitate efficient background processing for various 
+                                        applications.</li>
+                                    <li>Created an automated solution for defect control in production leveraging machine learning, significantly 
+                                        improving quality control processes.</li>
+                                    <li>Reduced quality control time per unit from 5 minutes to less than 10 seconds, enhancing production 
+                                        efficiency and throughput.</li>
+                                </ul> 
+                            </p> 
                         </div>
                     </div>
 
                     <div class="company-wrapper clearfix">
-                        <div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-                        <div class="time">Nov 2010 - Present</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+                        <div class="experience-title">Axetris AG</div>
+                        <div class="time">May. 2022 - Jan. 2023</div> 
                     </div>
 
                     <div class="job-wrapper clearfix">
-                        <div class="experience-title">Freelance, Web Designer / Web Developer</div> <!-- JOB TITLE  -->
+                        <div class="experience-title">Trainee</div>
                         <div class="company-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p> <!-- JOB DESCRIPTION  -->
+                            <p>
+                                Developed an application for automation and remote control of laboratory equipment. 
+                            </p>
                         </div>
                     </div>
-
-                    <div class="company-wrapper clearfix">
-                        <div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-                        <div class="time">Nov 2009 - Nov 2010</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
-                    </div>
-
-                    <div class="job-wrapper clearfix">
-                        <div class="experience-title">Web Designer </div> <!-- JOB TITLE  -->
-                        <div class="company-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p> <!-- JOB DESCRIPTION  -->
-                        </div>
-                    </div>
-
                 </div>
                 <!--Skill experience-->
 
                 <div class="section-wrapper clearfix">
                     <h3 class="section-title">Skills</h3> <!-- YOUR SET OF SKILLS  -->
                     <ul>
-                        <li class="skill-percentage">HTML / HTML5</li>
-                        <li class="skill-percentage">CSS / CSS3 / SASS / LESS</li>
-                        <li class="skill-percentage">Javascript</li>
-                        <li class="skill-percentage">Jquery</li>
-                        <li class="skill-percentage">Wordpress</li>
-                        <li class="skill-percentage">Photoshop</li>
+                        <li class="skill-percentage">C# / ASP.NET</li>
+                        <li class="skill-percentage">SQL / Entity Framework</li>
+                        <li class="skill-percentage">JavaScript / HTML / CSS</li>
+                        <li class="skill-percentage">Agile Methodologies</li>
+                        <li class="skill-percentage">Git / Version Control</li>
+                        <li class="skill-percentage">API Development & Integration</li>
+                        <li class="skill-percentage">Machine Learning / AI</li>
+                        <li class="skill-percentage">Windows Services Development</li>
 
                     </ul>
 
                 </div>
 
                 <div class="section-wrapper clearfix">
-                    <h3 class="section-title">Hobbies</h3> <!-- DESCRIPTION OF YOUR HOBBIES -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>
+                    <h3 class="section-title">Hobbies</h3>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>
+                    <p>Passionate about software development and continuous learning. 
+                        I enjoy exploring new technologies and solving complex technical challenges. 
+                        Outside of coding,
+                        Beyond tech, I stay active through volleyball and express creativity through pottery.
+                    </p>
+
+                    <p>Currently expanding technical knowledge through professional experience and continuous 
+                        skill development in modern software architectures and cloud technologies.
+                    </p>
                 </div>
 
             </div>

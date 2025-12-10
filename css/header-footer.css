@@ -1,0 +1,131 @@
+/* ============================================
+   HEADER & FOOTER STYLES
+   Shared across all pages
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES - GLOBAL THEME
+   ============================================ */
+
+:root {
+    --primary: #0066cc;
+    --primary-dark: #0052a3;
+    --primary-light: #e6f0ff;
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --border: #e5e7eb;
+    --bg-light: #f9fafb;
+    --bg-lighter: #f3f4f6;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+/* ============================================
+   GLOBAL BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+
+header {
+    background: white;
+    padding: 20px 0;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+header a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+footer {
+    background: #1f2937;
+    color: #f3f4f6;
+    padding: 30px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+
+footer p {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+footer strong {
+    color: #f3f4f6;
+}
+
+/* ============================================
+   RESPONSIVE HEADER & FOOTER
+   ============================================ */
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+
+    header a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 25px 15px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}

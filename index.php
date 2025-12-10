@@ -2,12 +2,13 @@
 $title = "My PHP skills";
 require_once("blocks/header.php");
 ?>
+<link rel="stylesheet" href="css/portfolio.css"/>
 
 <body>
-    <div class="container mt2">
+    <div class="container">
 
         <!-- Intro -->
-        <div class="php-intro">
+        <section class="container mt2">
             <?php
             //check to show the server is running PHP
             $phpVersion = phpversion();
@@ -28,24 +29,32 @@ require_once("blocks/header.php");
             ];
             ?>
 
-            <h3>PHP Environment</h3>
-            <p><strong>PHP Version:</strong> <?= $phpVersion ?></p>
+            <h2> Welcome to My PHP Portfolio</h2>
 
-            <h3>About This Page</h3>
-            <p><?= introMessage(); ?></p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                <div>
+                    <h4>PHP Environment</h4>
+                    <p style="font-size: 1.1rem;"><strong>Current Version:</strong> <span style="color: var(--success); font-weight: bold;"><?= $phpVersion ?></span></p>
+                </div>
+                <div>
+                    <h4>About This Page</h4>
+                    <p><?= introMessage(); ?></p>
+                </div>
+            </div>
 
-            <h3>What I Use PHP For:</h3>
+            <h4>What I Use PHP For:</h4>
             <ul>
                 <?php foreach ($skills as $item): ?>
                     <li><?= htmlspecialchars($item); ?></li>
                 <?php endforeach; ?>
             </ul>
-        </div>
+        </section>
 
         <!-- Demo Form -->
-        <div class="container mt2">
-            <h3>This form example demonstrates:</h3>
-            <ul>
+        <section class="container mt2">
+            <h2>Interactive Form Example</h2>
+            <p>This form demonstrates several key backend concepts:</p>
+            <ul style="margin-bottom: 30px;">
                 <li>Server-side validation</li>
                 <li>Safe handling of user input</li>
                 <li>Clean separation of logic and output</li>
@@ -95,12 +104,9 @@ require_once("blocks/header.php");
 
             <div class="php-demo">
 
-                <h4>Interactive form Demo</h4>
-                <p>This contact form runs on PHP and shows server-side validation in action.</p>
-
                 <?php if ($success): ?>
                     <div class="success">
-                        <strong>Thank you!</strong> Your message was submitted successfully.
+                        <strong>✓ Success!</strong> Your message was submitted successfully.
                     </div>
                 <?php endif; ?>
 
@@ -116,30 +122,36 @@ require_once("blocks/header.php");
                 <?php endif; ?>
 
                 <form method="POST">
-                    <label>Name:</label>
-                    <input type="text" name="name" value="<?= $name ?>">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="<?= $name ?>" placeholder="Enter your name">
 
-                    <label>Email:</label>
-                    <input type="text" name="email" value="<?= $email ?>">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="<?= $email ?>" placeholder="Enter your email">
 
-                    <label>Message:</label>
-                    <textarea name="message"><?= $message ?></textarea>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message"><?= $message ?></textarea>
 
-                    <button type="submit" class="btn btn-success">Send</button>
+                    <button type="submit" class="btn btn-success" style="width: 100%;">Send Message</button>
                 </form>
             </div>
-        </div>
+        </section>
 
-        <!-- Database and API -->
-        <div class="container mt2">
-            <h3>Below are small, real-world PHP examples showing how I structure code,
-                work with databases, and build simple APIs.</h3>
-            <h4>This snippet shows:</h4>
+        <!-- OOP, Database and API -->
+        <section class="container mt2">
+            <h2>OOP & Database Integration</h2>
+            <p>These real-world examples demonstrate how I structure code, work with databases, and build APIs.</p>
+
+            <h4>Object-Oriented Design Pattern:</h4>
             <ul>
-                <li>OOP basics</li>
-                <li>Constructor dependency injection</li>
+                <li>OOP basics with dependency injection</li>
                 <li>Clean, reusable PHP classes</li>
+                <li>Service-oriented architecture</li>
             </ul>
+
+            <pre style="margin: 0; background: transparent; color: inherit; padding: 0; border: none;">
+    $service = new UserService(new Logger());
+    echo $service->createUser("John");</pre>
+
             <?php
             // A simple Logger class
             class Logger
@@ -185,52 +197,60 @@ require_once("blocks/header.php");
 
                 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+                echo "<h4 style='margin-top: 20px;'>Sample Database Records:</h4>";
+                echo "<div style='background: #f3f4f6; padding: 15px; border-radius: 8px; margin: 15px 0;'>";
                 foreach ($users as $user) {
-                    echo $user["name"] . " - " . $user["email"] . "<br>";
+                    echo "<div style='padding: 8px 0; border-bottom: 1px solid #e5e7eb;'>";
+                    echo "<strong>" . htmlspecialchars($user["name"]) . "</strong> - " . htmlspecialchars($user["email"]);
+                    echo "</div>";
                 }
-            } catch (PDOException $e) {
+                echo "</div>";
+            } 
+            catch (PDOException $e) 
+            {
+                echo "<div style='background: #fee2e2; color: #7f1d1d; padding: 15px; border-radius: 8px; border-left: 4px solid #ef4444;'>";
                 echo "Database error: " . $e->getMessage();
+                echo "</div>";
             }
             ?>
-            <p></p>
-            <p>This example shows how I connect to a MySQL database using PDO and run secure queries using prepared statements.
-                Prepared statements ensure that user input is always treated as data, not SQL code, which protects the application from SQL injection attacks.
-                I also enable error reporting and UTF-8 encoding for reliability and easier debugging.
-            </p>
 
+            <p style="margin-top: 20px;">This example demonstrates secure database connections using PDO with prepared statements, which protect against SQL injection attacks. I also enable error reporting and UTF-8 encoding for reliability and easier debugging.</p>
 
-            <div id="api-demo">
+            <div id="api-demo" style="margin-top: 30px;">
+                <h4>API Response Example:</h4>
                 <script>
                     fetch("api/example.php")
                         .then(response => response.json())
                         .then(data => {
-                            document.getElementById("api-demo").innerHTML =
-                                "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+                            const pre = document.createElement('pre');
+                            pre.textContent = JSON.stringify(data, null, 2);
+                            document.getElementById("api-demo").appendChild(pre);
+                        })
+                        .catch(error => {
+                            document.getElementById("api-demo").innerHTML += '<p style="color: var(--error);">Could not load API demo</p>';
                         });
                 </script>
             </div>
-            <a href="api/example.php" target="_blank" class="btn btn-success">View Raw API Response</a>
-        </div>
+            <a href="http://projects/php-portfolio/api/example.php" target="_blank" class="btn btn-success">View Raw API Response</a>
+            <p></br></p>
+            
+        </section>
 
         <!-- Simple PHP CRUD App -->
-        <div class="container mt2">
-            <p></p>
-            <h3>Mini Project: Simple PHP CRUD App</h3>
-            <p>This is a lightweight CRUD (Create, Read, Update, Delete)
-                system written in plain PHP and MySQL. It demonstrates how I work with database queries,
-                input validation, and simple routing logic without using a framework.
-                The interface is intentionally minimal to focus on backend functionality.
-            </p>
-            <p></p>
-            <a href="crud-demo.php" target="_blank" class="btn btn-success">Navigate to project page</a>
-            <p></p>
-        </div>
+        <section class="container mt2">
+            <h2>CRUD Application Project</h2>
+            <p>This is a lightweight CRUD (Create, Read, Update, Delete) system written in plain PHP and MySQL. It demonstrates how I work with database queries, input validation, and simple routing logic without using a framework. The interface is intentionally minimal to focus on backend functionality.</p>
+
+            <a href="crud-demo.php" class="btn btn-success" style="margin-top: 20px;">Explore the CRUD Project →</a>
+            <p></br></p>
+        </section>
 
         <!-- Security Practices -->
-        <div class="container mt2">
-            <h3>Security Practices I Always Use</h3>
-            <p>Security is a core part of backend development.
-                These are the practices I follow in every PHP project:</p>
+        <section class="container mt2">
+            <h2>Security & Best Practices</h2>
+            <p>Security is a core part of backend development. These are the practices I follow in every PHP project:</p>
+
+            <h4>🔒 Security Measures:</h4>
             <ul>
                 <li>Prepared statements to protect against SQL injection</li>
                 <li>Password hashing using password_hash() and password_verify()</li>
@@ -239,18 +259,18 @@ require_once("blocks/header.php");
                 <li>Limited error visibility, no sensitive info in production</li>
                 <li>Session hardening (regenerate IDs, HTTP-only cookies)</li>
             </ul>
-            <pre style="background:#eee; padding:10px; border-radius:5px;">
-                &lt;?php
-                $hash = password_hash($password, PASSWORD_DEFAULT);
 
-                if (password_verify($password, $hash)) {
-                    // Successful login
-                }
-                ?&gt;
+            <pre>
+    &lt;?php
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        if (password_verify($password, $hash)) {
+            // Successful login
+        }
+    ?&gt;
             </pre>
 
             <!-- Performance -->
-            <h4>⚡ Performance & Optimization Techniques</h4>
+            <h4>⚡ Performance & Optimization</h4>
             <ul>
                 <li>Use PDO prepared statements (cached & optimized)</li>
                 <li>Reduce unnecessary database queries</li>
@@ -269,38 +289,41 @@ require_once("blocks/header.php");
                 <li>Keep functions short and focused</li>
                 <li>Use meaningful variable and method names</li>
             </ul>
-            <pre style="background:#eee; padding:10px; border-radius:5px;">
-                /app
-                    /controllers
-                    /models
-                    /views
-                /config
-                /public
-                /vendor
+
+            <pre>   
+    /app
+        /controllers
+        /models
+        /views
+    /config
+    /public
+    /vendor
             </pre>
 
             <!-- Tools -->
-            <h4>🧰 Tools I Use in PHP Projects</h4>
+            <h4>🧰 Tools & Technologies</h4>
             <ul>
                 <li>Composer for dependency management</li>
                 <li>PDO for secure database access</li>
                 <li>PHPUnit for testing</li>
-                <li>phpMyAdmin / MySQL Workbench for MySQL management</li>
+                <li>phpMyAdmin / MySQL Workbench for database management</li>
                 <li>Git for version control</li>
             </ul>
-            <pre style="background:#eee; padding:10px; border-radius:5px;">
-                composer init
-                composer require vlucas/phpdotenv
+
+            <pre>
+    composer init
+    composer require vlucas/phpdotenv
             </pre>
 
             <!-- APIs -->
             <h4>🌐 APIs & Frontend Integration</h4>
             <p>I often build APIs that serve data to JavaScript frontends, fetch/AJAX requests, JSON-based components, or external services.</p>
-            <pre style="background:#eee; padding:10px; border-radius:5px;">
-                &lt;?php
-                header("Content-Type: application/json");
-                echo json_encode(["success" =&gt; true, "data" =&gt; $items]);
-                ?&gt;
+
+            <pre>
+    &lt;?php
+        header("Content-Type: application/json");
+        echo json_encode(["success" =&gt; true, "data" =&gt; $items]);
+    ?&gt;
             </pre>
 
             <!-- Deployment -->
@@ -313,9 +336,10 @@ require_once("blocks/header.php");
             </ul>
 
             <!-- Mindset -->
-            <h4>👍 My PHP Mindset</h4>
+            <h4>👍 My PHP Development Mindset</h4>
             <p>I focus on writing clean, secure, and maintainable PHP code. Even small projects follow professional practices such as validation, separation of logic, and safe database access. My goal is always to build applications that are easy to read, easy to extend, and safe to use.</p>
-        </div>
+            <p></br></p>
+        </section>
 
     </div>
 </body>
